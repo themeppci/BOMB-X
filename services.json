@@ -1,0 +1,283 @@
+{
+    "dg-home": {
+        "service_data": {   
+            "type": "sms",
+            "link": "https://dg-home.ru/login/",
+            "phone_key": "PHONE",
+            "email_key": "",
+            "phone_mask": "+7 (*code*) *seg_1*-*seg_2*-*seg_3*"
+        },
+        "request_data": {
+            "sessid": "3aae86437150563c9ec3f9edcdaee6c3",
+            "TYPE": "auth",
+            "PHONE": "",
+            "auth_agree": "1"
+        }
+    },
+    "bestwatch": {
+        "service_data": {   
+            "type": "sms",
+            "link": "https://www.bestwatch.ru/ajax/smsLogin/",
+            "phone_key": "Sms2login[phone]",
+            "email_key": "",
+            "phone_mask": "+7 (*code*) *seg_1*-*seg_2*-*seg_3*"
+        },
+        "request_data": {
+            "Sms2login[step]": 1,
+            "Sms2login[phone]": ""
+        }
+    },
+    "pro-bike": {
+        "service_data": {   
+            "type": "call",
+            "link": "https://pro-bike.ru/forms/",
+            "phone_key": "phone",
+            "email_key": "",
+            "phone_mask": "+7*code**seg_1**seg_2**seg_3*"
+        },
+        "request_data": {
+            "form": "form_call_back",
+            "comment": "",
+            "url": "/",
+            "item_id": "",
+            "height": "",
+            "x-token": "",
+            "name": "Владислав",
+            "phone": ""
+        }
+    },
+    "hoff": {
+        "service_data": {   
+            "type": "sms",
+            "link": "https://hoff.ru/vue/register/",
+            "phone_key": "phone",
+            "email_key": "",
+            "phone_mask": "+7 *code* *seg_1* *seg_2* *seg_3*"
+        },
+        "request_data": {
+            "phone": ""
+        }
+    },
+    "dns-shop": {
+        "service_data": {   
+            "type": "sms",
+            "link": "https://www.dns-shop.kz/auth/auth/fast-authorization/",
+            "phone_key": "FastAuthorizationLoginLoadForm[login]",
+            "email_key": "",
+            "phone_mask": "7*code**seg_1**seg_2**seg_3*"
+        },
+        "request_data": {
+            "FastAuthorizationLoginLoadForm[login]": "",
+            "FastAuthorizationLoginLoadForm[token]": "",
+            "FastAuthorizationLoginLoadForm[isPhoneCall]": "0"
+        }
+    },
+    "galaxystore": {
+        "service_data": {   
+            "type": "sms",
+            "link": "https://galaxystore.ru/local/components/multisite/system.auth.sms/ajax.php",
+            "phone_key": "PERSONAL_PHONE",
+            "email_key": "",
+            "phone_mask": "7 (*code*) *seg_1*-*seg_2*-*seg_3*"
+        },
+        "request_data": {
+            "action": "code_sms",
+            "PERSONAL_PHONE": "",
+            "PERSONAL_EMAIL": ""
+        }
+    },
+    "eldorado": {
+        "service_data": {   
+            "type": "sms",
+            "link": "https://www.eldorado.ru/_ajax/spa/auth/v2/auth_with_login.php",
+            "phone_key": "phone",
+            "email_key": "",
+            "phone_mask": "+7 *code* *seg_1* *seg_2**seg_3*"
+        },
+        "request_data": {
+            "user_login": "",
+            "authorization": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7IlNJRCI6IjcwZXJnMnIxbDYzdGhjb3BzNzloMGNxdDc1In0sImV4cCI6MTY4MDczOTIwOX0.P1Ogm8ur1FbvvzkqTCTbi0P9XoiDAhl9UQn9iKrinTPAhZLQ0cL7zenuiAIz9bT9dZIYcGv5EK9HZFJRJG5mmA"
+        }
+    },
+    "sportmaster": {
+        "service_data": {   
+            "type": "sms",
+            "link": "https://www.sportmaster.ru/web-api/v1/auth/phone/code/",
+            "phone_key": "user_login",
+            "email_key": "",
+            "phone_mask": "7*code**seg_1**seg_2**seg_3*"
+        },
+        "request_data": {
+            "user_login": "",
+            "typeChannel": "SMS"
+        }
+    },
+    "vkusvill": {
+        "service_data": {   
+            "type": "sms",
+            "link": "https://vkusvill.ru/ajax/user_v2/auth/check_phone.php",
+            "phone_key": "USER_PHONE",
+            "email_key": "",
+            "phone_mask": "+7 (*code*) *seg_1*-*seg_2*-*seg_3*"
+        },
+        "request_data": {
+            "cname": "",
+            "FUSER_ID": "281922582",
+            "USER_NAME": "",
+            "USER_PHONE": "",
+            "token": "",
+            "is_retry": "",
+            "AGREE_SUBSCRIBE": "Y",
+            "ckey": "S4pakVFtnm"
+        }
+    },
+    "lenta": {
+        "service_data": {   
+            "type": "sms",
+            "link": "https://lenta.com/api/v1/registration/requestValidationCode",
+            "phone_key": "phone",
+            "email_key": "",
+            "phone_mask": "*code**seg_1**seg_2**seg_3*"
+        },
+        "request_data": {
+            "phone": ""
+        }
+    },
+    "fix-price": {
+        "service_data": {   
+            "type": "call",
+            "link": "https://api.fix-price.com/buyer/v2/registration/phone/request",
+            "phone_key": "phone",
+            "email_key": "",
+            "phone_mask": "+7(*code*)-*seg_1*-*seg_2*-*seg_3*"
+        },
+        "request_data": {
+            "phone": ""
+        }
+    },
+    "goldapple": {
+        "service_data": {   
+            "type": "sms",
+            "link": "https://goldapple.ru/web_scripts/jwt-auth/start",
+            "phone_key": "phone_number",
+            "email_key": "",
+            "phone_mask": "7*code**seg_1**seg_2**seg_3*"
+        },
+        "request_data": {
+            "country_code": "RU",
+            "phone_number": "",
+            "recaptcha-token": "03AKH6MRHpNzPWyBr9tp6GLYUQ_MN3W8mK9lPWxn8prTe-uI2khop7WytdGKq8ERkASqn2N0YDLiaEUZK8HKgsku84O8Te2n5RATVqaBQPRcPO0D_uQY4a-5RP_abyxTkVzSBzwpyXy4zfJU1NNGwMrSPiDLaoNl8U3ai_SsZ5uj939Lio_4WHANoBneyVRUFFgiDKdLc4MX-6mMHY9XCVho9CxCNAMzRv535LDXezen4D99DGATpoAuybwp08AA3YSJ8OjvbCJ50Q9SBD1c79wMomktevRjipjgdCo_819wdMqZ5BiRtIxa63muxUkrO9DIASjV_Xm8-Zo8vxRC0BQiY6G79B81gxDXm8LacsBqMJhqPyHv7EURugU4gs-kzsEW-hXKyNZFukrkrtwM8yVJAUC3TKCLARj-NOkFyl2ZC5kRC3unVUzGmZf7wBafTg34z_DqYJ2W_sfL8tosUcDJgqP_OCbz0hBVPyBRVRvRnGHHEurcpUxSOgNwBW9ZsBFEC6v41PpxqM"
+        }
+    },
+    "chitai-gorod": {
+        "service_data": {   
+            "type": "sms",
+            "link": "https://web-gate.chitai-gorod.ru/api/v1/auth/code",
+            "phone_key": "phone_number",
+            "email_key": "",
+            "phone_mask": "7*code**seg_1**seg_2**seg_3*"
+        },
+        "request_data": {
+            "phone": "",
+            "authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdXNlci5wcm9kLmNnb3JvZC5wdyIsInN1YiI6IjYzZmE2MmU0ZGY4NzVjYzA2NzQ3YTFkMzQzMTAzYzhjMDk2MTBjNDA1ZGIyYzM1MzBhOGQzNTgyZTFlZTlhOTAiLCJpYXQiOjE2ODA3MzUwNTIsImV4cCI6MTY4MDkwNzg1MiwidHlwZSI6MTB9.INjA9C4e1W63f8IWhMVVaFE2XNOKG0hHIu8eCWxv9Z4"
+        }
+    },
+    "eapteka": {
+        "service_data": {   
+            "type": "sms",
+            "link": "https://api.eapteka.ru/api/v3/user",
+            "phone_key": "phone_number",
+            "email_key": "",
+            "phone_mask": "+7 (*code*) *seg_1*-*seg_2*-*seg_3*"
+        },
+        "request_data": {
+            "force_sms": "true",
+            "phone": ""
+        }
+    },
+    "re-store": {
+        "service_data": {   
+            "type": "sms",
+            "link": "https://re-store.ru/api/auth/code/phone/",
+            "phone_key": "phone_number",
+            "email_key": "",
+            "phone_mask": "+7 (*code*) *seg_1*-*seg_2*-*seg_3*"
+        },
+        "request_data": {
+            "phone": ""
+        }
+    },
+    "lgcity": {
+        "service_data": {   
+            "type": "sms",
+            "link": "https://lgcity.ru/ajax/Auth/SmsSend/",
+            "phone_key": "phone",
+            "email_key": "",
+            "phone_mask": "+7 (*code*) *seg_1*-*seg_2**seg_3*"
+        },
+        "request_data": {
+            "sentCode": "",
+            "phone": "",
+            "code": "",
+            "smsSubscription": "Y"
+        }
+    },
+    "globus": {
+        "service_data": {   
+            "type": "sms",
+            "link": "https://online.globus.ru/?hyper=5011&utm_source=globus.ru&utm_medium=menu&utm_campaign=online.globus.ru&utm_content=shapka-sajta",
+            "phone_key": "FORM[PHONE]",
+            "email_key": "",
+            "phone_mask": "+7 (*code*) *seg_1*-*seg_2*-*seg_3*"
+        },
+        "request_data": {
+            "AUTH_FORM": "Y",
+            "TYPE": "AUTH",
+            "FORM[AUTH_TYPE]": "PHONE",
+            "FORM[PHONE]": ""
+        }
+    },
+    "bookvoed": {
+        "service_data": {   
+            "type": "sms",
+            "link": "https://www.bookvoed.ru/",
+            "phone_key": "rphone",
+            "email_key": "remail",
+            "phone_mask": "+7 *code* *seg_1* *seg_2* *seg_3*"
+        },
+        "request_data": {
+            "rphone": "",
+            "remail": "",
+            "rname": "Олег",
+            "rsurname": "Иванов",
+            "terms": "on",
+            "mailing": "on",
+            "g-recaptcha-response": "",
+            "step": "1"
+        }
+    },
+    "585zolotoy": {
+        "service_data": {   
+            "type": "sms",
+            "link": "https://www.585zolotoy.ru/api/sms/send_code/",
+            "phone_key": "phone",
+            "email_key": "",
+            "phone_mask": "7*code**seg_1**seg_2**seg_3*"
+        },
+        "request_data": {
+            "phone": ""
+        }
+    },
+    "av": {
+        "service_data": {   
+            "type": "sms",
+            "link": "https://oauth.av.ru/check-phone",
+            "phone_key": "phone",
+            "email_key": "",
+            "phone_mask": "7 (*code*) *seg_1*-*seg_2*-*seg_3*"
+        },
+        "request_data": {
+            "phone": ""
+        }
+    }
+}
