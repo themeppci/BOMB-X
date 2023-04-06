@@ -11,7 +11,7 @@ download repo
 
 install libs
 
-`pip install -r requirements.txt`
+`pip install -r requirements.txt` or `pip install colorama` or `pip3 install colorama`
 
 # START
 
